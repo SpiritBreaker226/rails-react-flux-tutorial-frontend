@@ -18,6 +18,28 @@ function _getErrors (res) {
 var APIEndpoints = SmallConstants.APIEndpoints;
 
 module.exports = {
+	createStory: function() {
+		request.post(APIEndpoints.STORIES)
+			.set('Accept', 'application/json')
+			.set('Authorization', sessionStorage.getItem('accessToken'))
+			.send({
+				story: {
+					title: title,
+					body:  body
+				}
+			})
+			.end(function(error, res) {
+				if(res) {
+					if(res.error) {
+						var errorMsgs = _getErrors(res);
+						ServerActionCreators.receiveCreatedStory(null, errorMsgs);
+					} else {
+						json = JSON.parse(res.text);
+						ServerActionCreators.receiveCreatedStory(json, null);
+					}
+				}
+			});
+	},
 	signup: function(email, password, passwordConfirmation) {
 		request.post(APIEndpoints.REGISTRATION)
 			.send({
