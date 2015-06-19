@@ -1,5 +1,5 @@
 var React = require('react');
-var router = require('./stores/RoutesStore.react.jsx').getRouter();
+var router = require('./stores/RouteStore.react.jsx').getRouter();
 
 window.React = React;
 
