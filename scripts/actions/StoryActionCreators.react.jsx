@@ -3,7 +3,7 @@ var SmallConstants = require('../constants/SmallConstants.js');
 
 var ActionTypes = SmallConstants.ActionTypes;
 
-module.exports {
+module.exports = {
 	loadStories: Function() {
 		SmallAppDispatcher.handleViewAction({
 			type: ActionTypes.LOAD_STORIES
