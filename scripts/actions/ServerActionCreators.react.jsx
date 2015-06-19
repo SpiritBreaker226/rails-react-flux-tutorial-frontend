@@ -10,5 +10,5 @@ module.exports = {
 			json: json,
 			errors: errors
 		});
-	});
+	}
 };
