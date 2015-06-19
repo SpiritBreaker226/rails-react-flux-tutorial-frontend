@@ -30,7 +30,7 @@ var StoriesPage = React.createClass({
 		});
 	},
 	render: function() {
-		var errors = (this.state.errors.length > 0) ? <ErrorNotice errors-{this.state.errors} /> : <div></div>;
+		var errors = (this.state.errors.length > 0) ? <ErrorNotice errors={this.state.errors} /> : <div></div>;
 		return (
 			<div>
 				{errors}
@@ -47,9 +47,7 @@ var StoryItem = React.createClass({
 		return (
 			<li className="story">
 				<div className="story__title">
-					<Link to="story" params={
-						storyId: this.props.story.id
-					}>
+					<Link to="story" params={storyId=this.props.story.id}>
 						{this.props.story.title}
 					</Link>
 				</div>
