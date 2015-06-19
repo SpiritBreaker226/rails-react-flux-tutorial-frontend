@@ -13,9 +13,9 @@ var StoriesPage = React.createClass({
 	getInitialState: function() {
 		return {
 			stores: StoryStore.getAllStories(),
-			errors = []
+			errors: []
 		};
-	}
+	},
 	componentDidMount: function() {
 		StoryStore.addChangeListener(this._onChange);
 		StoryActionCreators.loadStories();
