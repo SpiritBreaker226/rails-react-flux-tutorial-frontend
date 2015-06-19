@@ -27,7 +27,7 @@ var SessionStore = assign({}, EventEmitter.prototype, {
 	},
 	getAccessToken: function() {
 		return _accessToken;
-	}
+	},
 	getEmail: function() {
 		return _email;
 	},

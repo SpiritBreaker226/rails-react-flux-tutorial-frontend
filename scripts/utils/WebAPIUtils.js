@@ -61,7 +61,7 @@ module.exports = {
 					}
 				}
 			});
-	}
+	},
 	login: function(email, password) {
 		request.post(APIEndpoints.LOGIN)
 			.send({
