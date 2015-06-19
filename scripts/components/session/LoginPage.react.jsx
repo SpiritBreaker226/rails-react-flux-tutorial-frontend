@@ -17,7 +17,7 @@ var LoginPage = React.createClass({
 	},
 	_onChange: function() {
 		this.setState({
-			errors: SessionStore.getErrors();
+			errors: SessionStore.getErrors()
 		});
 	},
 	_onSubmit: function(e) {
