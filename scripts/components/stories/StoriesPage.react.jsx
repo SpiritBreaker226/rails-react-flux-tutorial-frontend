@@ -42,4 +42,29 @@ var StoriesPage = React.createClass({
 	}
 });
 
+var StoryItem = React.createClass({
+	render: function() {
+		return (
+			<li className="story">
+				<div className="story__title">
+					<Link to="story" params={
+						storyId: this.props.story.id
+					}>
+						{this.props.story.title}
+					</Link>
+				</div>
+				<div className="story__body">
+					{this.props.story['abstract']}...
+				</div>
+				<span className="story__user">
+					{this.props.story.user.username}
+				</span>
+				<span className="story__date">
+					 - {timeago(this.props.story.created_at)}
+				</span>
+			</li>
+		);
+	}
+});
+
 module.exports = StoriesPage;
