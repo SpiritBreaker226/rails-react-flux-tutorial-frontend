@@ -4,14 +4,14 @@ var SmallConstants = require('../constants/SmallConstants.js');
 var ActionTypes = SmallConstants.ActionTypes;
 
 module.exports = {
-	loadStories: Function() {
+	loadStories: function() {
 		SmallAppDispatcher.handleViewAction({
 			type: ActionTypes.LOAD_STORIES
 		});
 
 		WebAPIUtils.loadStories();
 	},
-	loadStory: Function(storyId) {
+	loadStory: function(storyId) {
 		SmallAppDispatcher.handleViewAction({
 			type: ActionTypes.LOAD_STORY,
 			storyId: storyId
