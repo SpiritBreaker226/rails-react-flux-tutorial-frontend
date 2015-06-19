@@ -3,7 +3,7 @@ var React = require('react');
 var WebAPIUtils = require('../../utils/WebAPIUtils.js');
 var StoryStore = require('../../stores/StoryStore.react.jsx');
 var ErrorNotice = require('../../components/common/ErrorNotice.react.jsx');
-var StoryActionCreators = require('../../action/StoryActionCreators.react.jsx');
+var StoryActionCreators = require('../../actions/StoryActionCreators.react.jsx');
 
 var Router = require('react-router');
 var Link = Router.Link;
