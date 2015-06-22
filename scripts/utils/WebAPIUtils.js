@@ -73,6 +73,17 @@ module.exports = {
 				}
 			});
 	},
+	loadStory: function(storyId) {
+		request.get(APIEndpoints.STORIES + '/' + storyId)
+			.set('Accept', 'application/json')
+			.set('Authorization', sessionStorage.getItem('accessToken'))
+			.end(function(error, res) {
+				if (res) {
+					json = JSON.parse(res.text);
+					ServerActionCreators.receiveStory(json);	
+				}
+			});
+	},
 	login: function(email, password) {
 		request.post(APIEndpoints.LOGIN)
 			.send({
