@@ -62,6 +62,17 @@ module.exports = {
 				}
 			});
 	},
+	loadStories: function() {
+		request.get(APIEndpoints.STORIES)
+			.set('Accept', 'application/json')
+			.set('Authorization', sessionStorage.getItem('accessToken'))
+			.end(function(error, res) {
+				if (res) {
+					json = JSON.parse(res.text);
+					ServerActionCreators.receiveStories(json);
+				}
+			});
+	},
 	login: function(email, password) {
 		request.post(APIEndpoints.LOGIN)
 			.send({
