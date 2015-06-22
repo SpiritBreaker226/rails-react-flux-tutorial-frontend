@@ -72,7 +72,7 @@ var StoriesList = React.createClass({
 		return (
 			<ul className="large-8 medium-10 small-12 small-centered columns">
 				{
-					this.props.stores.map(function() {
+					this.props.stores.map(function(story, index) {
 						return <StoryItem story={story} key={"story-" + index} />
 					})
 				}		
