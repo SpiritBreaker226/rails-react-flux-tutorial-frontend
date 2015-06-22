@@ -1,6 +1,8 @@
 var SmallAppDispatcher = require('../dispatcher/SmallAppDispatcher.js');
 var SmallConstants = require('../constants/SmallConstants.js');
 
+var WebAPIUtils = require('../utils/WebAPIUtils.js');
+
 var ActionTypes = SmallConstants.ActionTypes;
 
 module.exports = {
