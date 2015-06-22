@@ -1,6 +1,6 @@
 var ServerActionCreators = require('../actions/ServerActionCreators.react.jsx');
 var SmallConstants = require('../constants/SmallConstants.js');
-var request = request('superagent');
+var request = require('superagent');
 
 function _getErrors (res) {
 	var errorMsgs = ["Something went wrong, please try again"];
