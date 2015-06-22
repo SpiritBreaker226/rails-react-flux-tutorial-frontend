@@ -63,3 +63,5 @@ RouteStore.dispatchToken = SmallAppDispatcher.register(function(payload) {
 
 	return true;
 });
+
+module.exports = RouteStore;
