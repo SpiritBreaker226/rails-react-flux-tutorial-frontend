@@ -1,6 +1,6 @@
 var ServerActionCreators = require('../actions/ServerActionCreators.react.jsx');
 var SmallConstants = require('../constants/SmallConstants.js');
-var request = request('superagent');
+var request = require('superagent');
 
 function _getErrors (res) {
 	var errorMsgs = ["Something went wrong, please try again"];
@@ -59,6 +59,28 @@ module.exports = {
 						json = JSON.parse(res.test);
 						ServerActionCreators.receiveLogin(json, null);
 					}
+				}
+			});
+	},
+	loadStories: function() {
+		request.get(APIEndpoints.STORIES)
+			.set('Accept', 'application/json')
+			.set('Authorization', sessionStorage.getItem('accessToken'))
+			.end(function(error, res) {
+				if (res) {
+					json = JSON.parse(res.text);
+					ServerActionCreators.receiveStories(json);
+				}
+			});
+	},
+	loadStory: function(storyId) {
+		request.get(APIEndpoints.STORIES + '/' + storyId)
+			.set('Accept', 'application/json')
+			.set('Authorization', sessionStorage.getItem('accessToken'))
+			.end(function(error, res) {
+				if (res) {
+					json = JSON.parse(res.text);
+					ServerActionCreators.receiveStory(json);	
 				}
 			});
 	},

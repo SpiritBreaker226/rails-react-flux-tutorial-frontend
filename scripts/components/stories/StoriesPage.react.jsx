@@ -47,7 +47,9 @@ var StoryItem = React.createClass({
 		return (
 			<li className="story">
 				<div className="story__title">
-					<Link to="story" params={storyId=this.props.story.id}>
+					<Link to="story" params={
+						{storyId: this.props.story.id}
+					}>
 						{this.props.story.title}
 					</Link>
 				</div>
@@ -70,7 +72,7 @@ var StoriesList = React.createClass({
 		return (
 			<ul className="large-8 medium-10 small-12 small-centered columns">
 				{
-					this.props.stores.map(function() {
+					this.props.stores.map(function(story, index) {
 						return <StoryItem story={story} key={"story-" + index} />
 					})
 				}		
