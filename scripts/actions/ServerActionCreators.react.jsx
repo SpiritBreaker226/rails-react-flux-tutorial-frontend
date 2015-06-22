@@ -10,5 +10,11 @@ module.exports = {
 			json: json,
 			errors: errors
 		});
+	},
+	receiveStories: function(json) {
+		SmallAppDispatcher.handleServerActtion({
+			type: ActionTypes.RECEIVE_STORIES,
+			json: json
+		});
 	}
 };
