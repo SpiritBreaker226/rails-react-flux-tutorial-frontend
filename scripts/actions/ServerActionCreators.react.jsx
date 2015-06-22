@@ -16,5 +16,11 @@ module.exports = {
 			type: ActionTypes.RECEIVE_STORIES,
 			json: json
 		});
+	},
+	receiveStory: function(json) {
+		SmallAppDispatcher.handleServerActtion({
+			type: ActionTypes.RECEIVE_STORY,
+			json: json
+		});
 	}
 };
