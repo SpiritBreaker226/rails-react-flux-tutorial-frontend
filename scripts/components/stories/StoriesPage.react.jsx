@@ -47,7 +47,9 @@ var StoryItem = React.createClass({
 		return (
 			<li className="story">
 				<div className="story__title">
-					<Link to="story" params={storyId=this.props.story.id}>
+					<Link to="story" params={
+						{storyId: this.props.story.id}
+					}>
 						{this.props.story.title}
 					</Link>
 				</div>
