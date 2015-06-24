@@ -6,7 +6,7 @@ function _getErrors (res) {
 	var errorMsgs = ["Something went wrong, please try again"];
 	if ((json = JSON.parse(res.text))) {
 		if (json['error']) {
-			errorMsgs = json['error'];
+			errorMsgs = [json['error']];
 		} else {
 			errorMsgs = [json['error']];
 		}
