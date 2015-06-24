@@ -40,11 +40,12 @@ module.exports = {
 				}
 			});
 	},
-	signup: function(email, password, passwordConfirmation) {
+	signup: function(email, username, password, passwordConfirmation) {
 		request.post(APIEndpoints.REGISTRATION)
 			.send({
 					user: {
-						username: email,
+						email: email,
+						username: username,
 						password: password,
 						passwordConfirmation: passwordConfirmation
 				}
