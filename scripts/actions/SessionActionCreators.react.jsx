@@ -5,14 +5,15 @@ var WebAPIUtils = require('../utils/WebAPIUtils.js');
 var ActionTypes = SmallConstants.ActionTypes;
 
 module.exports = {
-	signup: function(email, password, passwordConfirmation) {
+	signup: function(email, username, password, passwordConfirmation) {
 		SmallAppDispatcher.handleViewAction({
 			type: ActionTypes.SIGNUP_REQUEST,
 			email: email,
+			username: username,
 			password: password,
 			passwordConfirmation: passwordConfirmation
 		});
-		WebAPIUtils.signup(email, password, passwordConfirmation);
+		WebAPIUtils.signup(email, username, password, passwordConfirmation);
 	},
 	login: function(email, password) {
 		SmallAppDispatcher.handleViewAction({
