@@ -6,7 +6,7 @@ function _getErrors (res) {
 	var errorMsgs = ["Something went wrong, please try again"];
 	if ((json = JSON.parse(res.text))) {
 		if (json['error']) {
-			errorMsgs = json['error'];
+			errorMsgs = [json['error']];
 		} else {
 			errorMsgs = [json['error']];
 		}
@@ -40,13 +40,14 @@ module.exports = {
 				}
 			});
 	},
-	signup: function(email, password, passwordConfirmation) {
+	signup: function(email, username, password, passwordConfirmation) {
 		request.post(APIEndpoints.REGISTRATION)
 			.send({
 					user: {
-						username: email,
+						email: email,
+						username: username,
 						password: password,
-						passwordConfirmation: passwordConfirmation
+						password_confirmation: passwordConfirmation
 				}
 			})
 			.set('Accept', 'application/json')
