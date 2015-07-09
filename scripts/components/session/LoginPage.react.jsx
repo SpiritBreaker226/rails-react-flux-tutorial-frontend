@@ -54,4 +54,4 @@ var LoginPage = React.createClass({
 	}
 });
 
-module.export = LoginPage;
+module.exports = LoginPage;
