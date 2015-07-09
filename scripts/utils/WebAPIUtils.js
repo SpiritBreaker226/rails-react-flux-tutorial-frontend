@@ -47,7 +47,7 @@ module.exports = {
 						email: email,
 						username: username,
 						password: password,
-						passwordConfirmation: passwordConfirmation
+						password_confirmation: passwordConfirmation
 				}
 			})
 			.set('Accept', 'application/json')
