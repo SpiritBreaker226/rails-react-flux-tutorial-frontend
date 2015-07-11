@@ -101,7 +101,7 @@ module.exports = {
 						var errorMsgs = _getErrors(res);
 						ServerActionCreators.receiveLogin(null, errorMsgs);
 					} else {
-						json = JSON.parse(res.test);
+						json = JSON.parse(res.text);
 						ServerActionCreators.receiveLogin(json, null);
 					}
 				}
