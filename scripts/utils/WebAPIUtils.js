@@ -88,9 +88,11 @@ module.exports = {
 	login: function(email, password) {
 		request.post(APIEndpoints.LOGIN)
 			.send({
-				username: email,
-				password: password,
-				grant_type: 'password'
+				user: {
+					email: email,
+					password: password,
+					grant_type: 'password'
+				}
 			})
 			.set('Accept', 'application/json')
 			.end(function(error, res) {
@@ -99,7 +101,7 @@ module.exports = {
 						var errorMsgs = _getErrors(res);
 						ServerActionCreators.receiveLogin(null, errorMsgs);
 					} else {
-						json = JSON.parse(res.test);
+						json = JSON.parse(res.text);
 						ServerActionCreators.receiveLogin(json, null);
 					}
 				}
