@@ -9,7 +9,7 @@ var Header = React.createClass({
 		isLoggedIn: ReactPropTypes.bool,
 		email: ReactPropTypes.string
 	},
-	logout: function(e) {
+	_logout: function(e) {
 		e.preventDefault();
 
 		SessionActionCreators.logout();
@@ -21,7 +21,7 @@ var Header = React.createClass({
 					<a href="#">{this.props.email}</a>
 					<ul className="dropdown">
 						<li>
-							<a href="#" onClick={this.logout}>Logout</a>
+							<a href="#" onClick={this._logout}>Logout</a>
 						</li>
 					</ul>
 				</li>
